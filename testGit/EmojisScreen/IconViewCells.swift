@@ -15,7 +15,6 @@ final class IconViewCells: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        contentView.backgroundColor = .systemBlue
         contentView.addSubview(imageView)
         configureIcon()
         setImageConstraints()
@@ -41,9 +40,14 @@ final class IconViewCells: UICollectionViewCell {
             guard let data = data, error == nil else { return }
             print(response?.suggestedFilename ?? url.lastPathComponent)
             print("Download Finished")
-            // always update the UI from the main thread
             DispatchQueue.main.async() { [weak self] in
                 self?.imageView.image = UIImage(data: data)
+                let image = self?.imageView.image
+                let ratio = ((self?.imageView.frame.width)!) / image!.size.width
+                let newHeight = image!.size.width * ratio;
+                self?.imageView.frame = CGRect(origin: .zero, size: CGSize(width: newHeight, height: newHeight))
+                
+                self?.contentView.layoutIfNeeded()
             }
         }
     }
@@ -57,10 +61,12 @@ final class IconViewCells: UICollectionViewCell {
     }
     
     func setImageConstraints() {
+        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        imageView.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
-        imageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 5).isActive = true
+//        imageView.rightAnchor.constraint(equalTo: rightAnchor, constant: 5).isActive = true
+        imageView.widthAnchor.constraint(equalTo: widthAnchor, constant: 0).isActive = true
+        //imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
     }
 }

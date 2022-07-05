@@ -12,14 +12,17 @@ final class EmojisViewController: UIViewController, UICollectionViewDelegate, UI
     
     var emojis: Array<Any> = []
     var collectionView : UICollectionView?
+    let width = UIScreen.main.bounds.width
     
+    struct ConstSize {
+        let offset: CGFloat = UIScreen.main.bounds.width / 20
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        let width = UIScreen.main.bounds.width
-        layout.estimatedItemSize = CGSize(width: width / 6, height: width / 6)
+        //layout.estimatedItemSize = CGSize(width: width / 7, height: width / 7)
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
@@ -34,10 +37,6 @@ final class EmojisViewController: UIViewController, UICollectionViewDelegate, UI
         }
         getEmoji()
 
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width, height: 100)
     }
     
     func getEmoji() {
