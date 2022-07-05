@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "mach_msg_trap:(null)">
+         <PersistentStrings>
+            <PersistentString
+               value = "users[indexPath.row].login">
+            </PersistentString>
+            <PersistentString
+               value = "avatarImageView">
+            </PersistentString>
+            <PersistentString
+               value = "login">
+            </PersistentString>
+            <PersistentString
+               value = "users[0].login">
+            </PersistentString>
+            <PersistentString
+               value = "idSubtitleLable">
+            </PersistentString>
+            <PersistentString
+               value = "avatar_url">
+            </PersistentString>
+            <PersistentString
+               value = "idSubtitleLable.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UsersViewCell.setUpData(login:id:avatar_url:):UsersViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "avatarImageView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserViewController.viewDidLoad():UserViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "users">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in UserViewController.getUsers():UserViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "users">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in EmojisViewController.getEmoji():EmojisViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "UsersViewCell.downloadImage(from:):UsersViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "avatarImageView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserViewController.tableView(_:cellForRowAt:):UserViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "UserViewController.getUsers():UserViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "users">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
