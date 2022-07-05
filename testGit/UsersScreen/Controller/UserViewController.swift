@@ -83,9 +83,17 @@ final class UserViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//
+//        print("cell tapped")
+//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+      let tableRow = indexPath.row
 
-        print("cell tapped")
+      var controllerToPresent: UIViewController
+        controllerToPresent = UserDetailsViewController(login: users[tableRow].login)
+      self.present(controllerToPresent, animated: true)
     }
 }

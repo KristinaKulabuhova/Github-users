@@ -65,8 +65,6 @@ final class IconViewCells: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-//        imageView.rightAnchor.constraint(equalTo: rightAnchor, constant: 5).isActive = true
         imageView.widthAnchor.constraint(equalTo: widthAnchor, constant: 0).isActive = true
-        //imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
     }
 }
