@@ -28,9 +28,11 @@ final class UserViewController: UIViewController, UITableViewDelegate, UITableVi
     var users: [GHUser] = []
     
     let tableView = UITableView()
+    var sinceId : Int64 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.tabBar.isHidden = false
         configureTableView()
         getUsers()
     }
@@ -38,13 +40,16 @@ final class UserViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         configureTableView()
+        tableView.refreshControl?.addTarget(self, action: #selector(loadUsers(_:)), for: .valueChanged)
         tableView.refreshControl?.endRefreshing()
         tableView.reloadData()
+        tabBarController?.tabBar.isHidden = false
     }
     
     func configureTableView() {
         self.restorationIdentifier = "userlist"
         view.addSubview(tableView)
+        tableView.refreshControl = UIRefreshControl()
         tableView.register(UsersViewCell.self,
                            forCellReuseIdentifier: UsersViewCell.identifier)
         tableView.rowHeight = 70
@@ -57,7 +62,7 @@ final class UserViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func getUsers() {
-        guard let url = URL(string: "https://api.github.com/users") else { fatalError("Missing URL") }
+        guard let url = URL(string: "https://api.github.com/users?since=" + String(sinceId)) else { fatalError("Missing URL") }
         var urlRequest = URLRequest(url: url)
 
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -67,9 +72,15 @@ final class UserViewController: UIViewController, UITableViewDelegate, UITableVi
             guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
 
             users = try JSONDecoder().decode([GHUser].self, from: data)
+            users.reverse()
+            sinceId = users.first!.id
             tableView.refreshControl?.endRefreshing()
             tableView.reloadData()
         }
+    }
+    
+    @objc private func loadUsers(_ sender: Any) {
+        getUsers()
     }
 
     

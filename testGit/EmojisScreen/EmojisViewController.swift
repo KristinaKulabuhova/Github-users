@@ -28,6 +28,7 @@ final class EmojisViewController: UIViewController, UICollectionViewDelegate, UI
         layout.minimumLineSpacing = 10
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         collectionView?.contentMode = .scaleAspectFill
+        tabBarController?.tabBar.isHidden = false
         
         collectionView?.dataSource = self
         collectionView?.delegate = self
