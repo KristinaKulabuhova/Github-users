@@ -35,8 +35,15 @@ final class UserViewController: UIViewController, UITableViewDelegate, UITableVi
         getUsers()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        configureTableView()
+        tableView.refreshControl?.endRefreshing()
+        tableView.reloadData()
+    }
     
     func configureTableView() {
+        self.restorationIdentifier = "userlist"
         view.addSubview(tableView)
         tableView.register(UsersViewCell.self,
                            forCellReuseIdentifier: UsersViewCell.identifier)
@@ -79,7 +86,6 @@ final class UserViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: UsersViewCell.identifier, for: indexPath) as! UsersViewCell
         
         cell.setUpData(login: users[indexPath.row].login, id: String(users[indexPath.row].id), avatar_url: users[indexPath.row].avatar_url)
-        //tableView.reloadData()
         return cell
     }
     
@@ -90,10 +96,12 @@ final class UserViewController: UIViewController, UITableViewDelegate, UITableVi
 //    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      let tableRow = indexPath.row
+        let tableRow = indexPath.row
 
-      var controllerToPresent: UIViewController
-        controllerToPresent = UserDetailsViewController(login: users[tableRow].login)
-      self.present(controllerToPresent, animated: true)
+        let userDetails: UIViewController = UserDetailsViewController(login: users[tableRow].login)
+        userDetails.modalPresentationStyle = .pageSheet
+        navigationController?.pushViewController(userDetails, animated: true)
+        self.loadView()
+        self.view.setNeedsLayout()
     }
 }

@@ -43,6 +43,11 @@ class UserDetailsViewController: UIViewController {
         view.addSubview(detailsStackView)
         getUserDetails(login: userLogin)
         configureStack()
+        self.tabBarController!.tabBar.isHidden = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        navigationController?.popViewController(animated: true)
     }
     
     var avatarImage = UIImageView()
@@ -52,6 +57,19 @@ class UserDetailsViewController: UIViewController {
     var followingCountLabel = UILabel()
     var followersCountLabel = UILabel()
     var creationDateLabel = UILabel()
+    
+    func configure() {
+        nameLabel?.contentMode = .left
+        emailLabel?.contentMode = .left
+        organizationLabel.contentMode = .left
+        followingCountLabel.contentMode = .left
+        followersCountLabel.contentMode = .left
+        creationDateLabel.contentMode = .left
+        
+        avatarImage.layer.cornerRadius = 10
+        avatarImage.clipsToBounds = true
+        avatarImage.contentMode = .scaleAspectFill
+    }
     
     func downloadImage(from url: URL) {
         print("Download Started")
@@ -71,29 +89,52 @@ class UserDetailsViewController: UIViewController {
     }
     
     func setUpData(structUser: GHUserDetails) {
-        if let name = structUser.name {nameLabel = UILabel(); nameLabel?.text = name}
-        if let email = structUser.email {emailLabel = UILabel(); emailLabel?.text = email}
+        downloadImage(from: URL(string: user!.avatar_url)!)
+        if let name = structUser.name {nameLabel = UILabel()
+            nameLabel?.text = "Login: " + name
+            detailsStackView.addArrangedSubview(nameLabel!)
+            title = name
+        }
+        if let email = structUser.email {
+            emailLabel = UILabel()
+            emailLabel?.text = "Email: " + email
+            detailsStackView.addArrangedSubview(emailLabel!)
+            
+        }
         
-        creationDateLabel.text = structUser.created_at
-        followersCountLabel.text = String(structUser.followers)
-        followingCountLabel.text = String(structUser.following)
-        organizationLabel.text = structUser.organizations_url
+        creationDateLabel.text = "Date: " + structUser.created_at
+        followersCountLabel.text = "Followers: " + String(structUser.followers)
+        followingCountLabel.text = "Following: " + String(structUser.following)
+        organizationLabel.text = "Organization: " + structUser.organizations_url
     }
     
     func configureStack() {
         detailsStackView.axis = .vertical
-        detailsStackView.distribution = .equalSpacing;
-        detailsStackView.alignment = .center;
+        detailsStackView.distribution = .equalSpacing
+        detailsStackView.alignment = .leading
         detailsStackView.spacing = 30;
-    
-        if let name = nameLabel {detailsStackView.addArrangedSubview(name)}
-        if let email = emailLabel {detailsStackView.addArrangedSubview(email)}
         
         detailsStackView.addArrangedSubview(avatarImage)
         detailsStackView.addArrangedSubview(organizationLabel)
         detailsStackView.addArrangedSubview(followingCountLabel)
         detailsStackView.addArrangedSubview(followersCountLabel)
         detailsStackView.addArrangedSubview(creationDateLabel)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setCostraints()
+    }
+    
+    func setCostraints() {
+        
+        avatarImage.translatesAutoresizingMaskIntoConstraints = false
+        avatarImage.heightAnchor.constraint(equalTo: avatarImage.widthAnchor).isActive = true
+        detailsStackView.translatesAutoresizingMaskIntoConstraints = false
+        detailsStackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10).isActive = true
+        detailsStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150).isActive = true
+        detailsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: -50).isActive = true
+        detailsStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
     }
     
     func getUserDetails(login: String) {

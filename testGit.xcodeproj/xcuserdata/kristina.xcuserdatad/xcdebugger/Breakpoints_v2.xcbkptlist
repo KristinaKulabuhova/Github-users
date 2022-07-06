@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5C37856A-59FE-4B87-8F06-0D5576B306B7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "testGit/UsersScreen/Controller/UserViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "getUsers()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7DE953F0-1477-4DC8-A41E-DC6CB7A82FD2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -30,8 +14,8 @@
             filePath = "testGit/UsersScreen/Controller/UserViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "getUsers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -39,63 +23,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "81D09732-99B3-4667-868C-07C5545BAADA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "testGit/EmojisScreen/EmojisViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "getEmoji()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9D5B599C-4A53-4019-8963-B762243A2E64"
+            uuid = "C68F703A-C238-4021-9D68-AFB53053912E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "testGit/EmojisScreen/EmojisViewController.swift"
+            filePath = "testGit/UserDetailsScreen/UserDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "setUpData(structUser:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "9D5B599C-4A53-4019-8963-B762243A2E64 - 87c02aa3aa4d7ceb"
+                  uuid = "C68F703A-C238-4021-9D68-AFB53053912E - e83155208f362f7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "testGit.EmojisViewController.viewDidLoad() -&gt; ()"
+                  symbolName = "testGit.UserDetailsViewController.setUpData(structUser: testGit.UserDetailsViewController.GHUserDetails) -&gt; ()"
                   moduleName = "testGit"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kristina/Desktop/test/testGit/testGit/EmojisScreen/EmojisViewController.swift"
+                  urlString = "file:///Users/kristina/Desktop/test/testGit/testGit/UserDetailsScreen/UserDetailsViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "1216">
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "612">
                </Location>
                <Location
-                  uuid = "9D5B599C-4A53-4019-8963-B762243A2E64 - 87c02aa3aa4d7ceb"
+                  uuid = "C68F703A-C238-4021-9D68-AFB53053912E - e83155208f362f7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "testGit.EmojisViewController.viewDidLoad() -&gt; ()"
+                  symbolName = "testGit.UserDetailsViewController.setUpData(structUser: testGit.UserDetailsViewController.GHUserDetails) -&gt; ()"
                   moduleName = "testGit"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kristina/Desktop/test/testGit/testGit/EmojisScreen/EmojisViewController.swift"
+                  urlString = "file:///Users/kristina/Desktop/test/testGit/testGit/UserDetailsScreen/UserDetailsViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "1300">
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "660">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -103,32 +71,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "558C9457-00B3-4614-B3A6-9978950CFDBA"
+            uuid = "43B71C33-C12B-4E90-814B-7F95403E616D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "testGit/EmojisScreen/EmojisViewController.swift"
+            filePath = "testGit/UserDetailsScreen/UserDetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3C33B71A-9C79-4484-860E-9FA460B206A2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "testGit/EmojisScreen/EmojisViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "getUserDetails(login:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -3,13 +3,21 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "UserDetailsViewController.init():UserDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nameLabel">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "mach_msg_trap:(null)">
          <PersistentStrings>
             <PersistentString
-               value = "users[indexPath.row].login">
+               value = "avatarImageView">
             </PersistentString>
             <PersistentString
-               value = "avatarImageView">
+               value = "users[indexPath.row].login">
             </PersistentString>
             <PersistentString
                value = "login">
@@ -54,6 +62,14 @@
       </ContextState>
       <ContextState
          contextName = "closure #1 in EmojisViewController.getEmoji():EmojisViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "UserDetailsViewController.setUpData(structUser:):UserDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nameLabel">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "UsersViewCell.downloadImage(from:):UsersViewCell.swift">
